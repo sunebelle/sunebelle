@@ -56,7 +56,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
 
-mongoose.connect('mongodb://localhost/sunebelleDB', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://admin-sunebelle:sunebelle@cluster0.le5y7.mongodb.net/sunebelleDB?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 const postSchema = new mongoose.Schema({
     topic: String,
     topicIntro: String,
@@ -95,12 +95,15 @@ app.post("/compose", (req,res) =>{
         if (err) throw err;
         res.redirect("/");
         // console.log(post);
-        console.log(post.time.getDate());
-        console.log(post.time.getMonth());
+        // console.log(post.time.getDate());
+        // console.log(post.time.getMonth());
     });
 });
 
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
-
-app.listen(3000, ()=> console.log("The server is listening on the port 3000"));
+app.listen(port, ()=> console.log("The server is listening on the port 3000"));
