@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800;900&family=Noto+Sans&family=PT+Serif:wght@400;700&family=Shippori+Mincho+B1:wght@400;500;600;700;800&display=swap");
+
+/* font-family: "Noto Sans", sans-serif; */
+/* line-height: 1.6rem; */
+/* font-size: 1rem; */
+body {
+  font-family: 'PT Serif', serif; 
+  background-color: #f8f9fa;
+  font-size: 18px;
+  word-spacing: normal;
+  letter-spacing: normal;
+}
+.container-fluid-padding{
+  padding: 6% 5%;
+}
+.container-fluid-header{
+  padding: 0 5%;
+}
+
+/* h1,h2,h3,h4,h5{
+  font-family: 'PT Serif', serif; 
+  font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+} */
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 2;
+}
+
+h2{
+    margin: 20px 0;
+    line-height: 1.4;
+    font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  padding: 0 0 10px;
+  margin: 0;
+}
+
+h4{
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.small{
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.3rem;
+  margin: 10px 0;
+}
+.italic{
+  font-style: italic;
+}  
+
+.color-gray {
+  color: gray;
+}
+.color-white {
+  color: gainsboro;
+}
+@media (max-width: 810px){
+  .btn-subcribe {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 986px){
+  .btn-subcribe {
+    margin-top: 20px;
+  }
+  .input-subcriber{
+    width: 100% !important;
+  }
+}
+@media (max-width: 950px) {
+  .carousel-padding{
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 960px){
+  .single-articles{
+    margin-top: 20px;
+  }
+  .articles {
+    margin-left: 0 !important;
+  }
+}
+@media(max-width: 1240px) {
+  .newArticles{
+    width: 100% !important;
+  }
+}
+/* About-Page */
+.about-page{
+  background-color: #282846;
+  border-bottom: 2px solid rgb(220, 220, 220);
+  padding: 6% 5% 0;
+}
+
+/* Header Section  */
+.fixed-header {
+  position: fixed !important;
+  width: 100%;
+  top: 0;
+  border-bottom: 2px solid rgb(220, 220, 220);
+  background-color: #282846;
+  z-index: 1;
+  font-family: "Montserrat", sans-serif;
+}
+.nav-item {
+  padding: 0 20px;
+}
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.header-searchbox {
+  text-align: right;
+  border-bottom: 2px gainsboro solid;
+}
+
+.header-search {
+  width: 80%;
+  border: none;
+  outline: none;
+  background-color: #282846;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+/* <!-- Greeting section --> */
+
+.greeting {
+  margin-top: 100px;
+}
+.greeting-question {
+  margin: 30px 0 40px;
+}
+.greeting-width{
+  width: 80%;
+}
+/* <!-- grid-3 collumn section --> */
+
+.circle-img{
+  border-radius: 10%;
+  width: 280px;
+  height: 240px;
+}
+
+
+/* <!-- jokes-carousel section --> */
+
+
+.jokes-image {
+  width: 400px !important;
+  height: 300px !important;
+  margin: 0 40px 20px 0;
+}
+.carousel-item {
+  padding: 0 5% 10%;
+} 
+
+.carousel-caption {
+  text-align: left;
+  left: 5%;
+  width: 100%;
+  margin-top: 0;
+}
+.carousel-indicators {
+  margin-left: 5%;
+  justify-content: left;
+  z-index: -1;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  width: 5%;
+  opacity: 0.2;
+
+}
+
+
+/* <!-- Articles section  (id="list-example")--> */
+
+#categories {
+  width: 100%;
+}
+
+.list-group button {
+  width: 100%;
+}
+.list-group a {
+  text-decoration: none;
+  color: #007580;
+}
+
+.articles {
+  margin-left: 20px;
+  text-align: left;
+}
+
+.btn-categories {
+  background-color: #282846;
+  color: white;
+}
+
+
+/* <!-- section - features --> */
+.features-img{
+  width: 200px;
+  height: 250px;
+}
+
+
+/* Subcriber section */
+
+.input-subcriber {
+  width: 60%;
+  margin: 0;
+  border-bottom: 2px #282846 solid;
+}
+.input-subcriber:focus {
+  outline: none;
+  box-shadow: none;
+}
+.btn-subcribe {
+  color: white;
+  background-color: #282846;
+}
+
+
+/* Phone section  */
+.smartphone{
+  width: 10%;
+}
+.phoneCase {
+  position: relative;
+  width: 360px;
+  height: 600px;
+  /* background-color: #f8f9fa; */
+  background-color: white;
+  border-radius: 5%;
+  /* border: 15px black solid; */
+  border: 15px  #282846 solid;
+  /* transform: rotate(90deg); */
+}
+.phone-camera{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* border: 8px black solid; */
+  border: 8px  #282846  solid;
+  position: absolute;
+  top: -8px;
+  left: 155px;
+  /* size: 3rem; */
+  color: black;
+  background-color: white;
+  /* background-color: #f8f9fa; */
+}
+
+.phone-searchbox {
+  border: 2px rgb(172, 162, 162) solid;
+  border-radius: 5px;
+}
+.phone-search {
+  border: none;
+  outline: none;
+}
+
+.fa-paperclip {
+  transform: rotate(45deg);
+}
+.fa-sign-in-alt {
+  transform: rotate(90deg);
+}
+.phone-content {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.phone-content p {
+  margin: 0;
+  font-weight: 300;
+  line-height: 1;
+  color: gray;
+}
+.phone-content hr {
+  margin: 10px;
+}
+.keyboard-image {
+  /* image: 288/289/290 */
+  /* border-right: 2px black solid; */
+  /* border-bottom: 5px black solid; */
+  border-bottom: 5px #282846 solid;
+  /* border-left: 0.5px#282846 solid; */
+  margin-top: 64px;
+  /* margin-bottom: -15px; */
+  border-radius: 0 0 5% 5%;
+}
+
+
+/* Footer section */
+#footer {
+  text-align: center;
+  background-color:#282846 ;
+  color: white;
+}
+#footer p{
+  padding-bottom: 10px;
+  margin: 0;
+}
+.contact-footer {
+  padding: 10px 0 0;
+  margin: 0;
+}
+.contact-footer a {
+  text-decoration: none;
+  color: white;
+  margin: 20px 5px 0;
+  font-size: 20px;
+}
+

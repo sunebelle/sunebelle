@@ -10,7 +10,7 @@ const mongoose = require ("mongoose");
 const ejs = require ("ejs");
 const date = new Date();
 const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
-//lodash - same font of queries, redis (search), qs, 
+//lodash - same font of queries/ redis (search), qs, axios
 
 const dom = new JSDOM(`<!DOCTYPE html>hello`);
 dom.serialize() === "<!DOCTYPE html><html><head></head><body>hello</body></html>";
