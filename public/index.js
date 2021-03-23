@@ -12,12 +12,12 @@ const months = [
   "Nov",
   "Dec",
 ];
-let date = new Date();
-
+let i = 0;
+let txt = "";
 
 $(function greeting() {
-  let i = 0;
-  let txt = "";
+  let date = new Date();
+
   if (date.getHours() < 12) {
     txt = "Hi, Good Morning!";
     $("h3.question").text("Hope you have a good day!");
@@ -57,10 +57,7 @@ function getTime() {
     v.innerHTML = format(items[index]);
   });
 
-  setInterval(getTime,1000);
-
+  setInterval(getTime, 1000);
 }
 
 getTime();
-
-
