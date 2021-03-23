@@ -3,7 +3,7 @@
 <!-- Greeting section -->
 
 <div class="container-fluid-header container-fluid text-center greeting">
-  <h1 class="animation">Hi, Good morning!</h1>
+  <h1 id="animation"></h1>
   <div class="greeting-question">
     <h3 class="question">
       Do you have a coffee ?
@@ -11,40 +11,40 @@
     </h3>
   </div>
   <div class="row">
-    <div class="col-lg-2 col-sm-4">
+    <div class="col-lg-2 col-sm-4 ">
       <div class="btn-secondary mb-4">
         <p class="pt-2">Year</p>
-        <h3><%=date.getFullYear() %></h3>
+        <h3 class="get-time">year</h3>
       </div>
     </div>
     <div class="col-lg-2 col-sm-4 mb-4">
       <div class="btn-secondary">
         <p class="pt-2">Month</p>
-        <h3><%= month %></h3>
+        <h3 class="get-time">month</h3>
       </div>
     </div>
     <div class="col-lg-2 col-sm-4 mb-4">
       <div class="btn-secondary">
         <p class="pt-2">Day</p>
-        <h3><%=date.getDate() %></h3>
+        <h3 class="get-time">date</h3>
       </div>
     </div>
     <div class="col-lg-2 col-sm-4 mb-4">
       <div class="btn-secondary">
         <p class="pt-2">Hours</p>
-        <h3><%=date.getHours() %></h3>
+        <h3 class="get-time">hours</h3>
       </div>
     </div>
     <div class="col-lg-2 col-sm-4 mb-4">
       <div class="btn-secondary">
         <p class="pt-2">Minutes</p>
-        <h3><%=date.getMinutes() %></h3>
+        <h3 class="get-time">minutes</h3>
       </div>
     </div>
     <div class="col-lg-2 col-sm-4 mb-4">
       <div class="btn-secondary">
         <p class="pt-2">Seconds</p>
-        <h3><%=date.getSeconds() %></h3>
+        <h3 class="get-time">seconds</h3>
       </div>
     </div>
   </div>
@@ -342,7 +342,7 @@
           </p>
           <a href="#" class="stretched-link small">Continue reading</a>
         </div>
-        <div class="col-auto d-none d-lg-block">
+        <div class="col-auto d-lg-block">
           <img class="features-img" src="images/givingTree.jpg" alt="" />
         </div>
       </div>
@@ -361,7 +361,7 @@
           </p>
           <a href="#" class="stretched-link small">Continue reading</a>
         </div>
-        <div class="col-auto d-none d-lg-block">
+        <div class="col-auto d-lg-block">
           <img class="features-img" src="images/airvalue.jpg" alt="" />
         </div>
       </div>
@@ -380,7 +380,7 @@
           </p>
           <a href="#" class="stretched-link small">Continue reading</a>
         </div>
-        <div class="col-auto d-none d-lg-block">
+        <div class="col-auto d-lg-block">
           <img class="features-img" src="images/englishEasyCut.jpg" alt="" />
         </div>
       </div>
@@ -399,7 +399,7 @@
           </p>
           <a href="#" class="stretched-link small">Continue reading</a>
         </div>
-        <div class="col-auto d-none d-lg-block">
+        <div class="col-auto d-lg-block">
           <img class="features-img" src="images/howtowinfriends.jpg" alt="" />
         </div>
       </div>
@@ -448,7 +448,7 @@
       <div class="phoneCase mx-auto">
         <div class="m-2">
           <div class="d-flex justify-content-between">
-            <p class="color-gray"><%=date.getHours() %>:<%=date.getMinutes() %></p>
+            <p class="color-gray get-time">hours:minutes</p>
             <div class="phone-camera">
               <!-- <i class="fas fa-dot-circle fas-7x"></i> -->
             </div>
@@ -498,6 +498,9 @@
     </div>
   </div>
 </div>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<!-- <script src="index.js" ></script> -->
 
 <!-- Footer -->
 <%- include('partials/footer'); -%>
