@@ -13,7 +13,7 @@ const months = [
   "Dec",
 ];
 let i = 0;
-let txt = "";
+let txt;
 
 $(function greeting() {
   let date = new Date();
@@ -22,7 +22,7 @@ $(function greeting() {
     txt = "Hi, Good Morning!";
     $("h3.question").text("Hope you have a good day!");
   } else if (date.getHours() < 18) {
-    txt = "Hi, Good Evening!";
+    txt = "Hi, Good Afternoon!";
     $("h3.question").text("Taking a walk around is awesome");
   } else {
     txt = "Hi, Good Night!";
