@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import MotionBackground from "@/components/MotionBackground";
 
 export default function Home() {
   // Navigation State
@@ -392,23 +393,14 @@ LIMIT 5;`,
         </AnimatePresence>
       </header>
 
-      {/* DYNAMIC BACKGROUND SYSTEM */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-grid-pattern opacity-40" />
-        {/* Glow Blobs */}
-        <div className="absolute top-[10%] left-[5%] w-[45vw] h-[45vw] glow-bg-indigo animate-pulse-slow rounded-full opacity-60" />
-        <div className="absolute top-[40%] right-[5%] w-[40vw] h-[40vw] glow-bg-purple animate-pulse-slow rounded-full opacity-40" style={{ animationDelay: "2s" }} />
-        <div className="absolute bottom-[10%] left-[20%] w-[35vw] h-[35vw] glow-bg-pink animate-pulse-slow rounded-full opacity-35" style={{ animationDelay: "4s" }} />
-
-        {/* Absolute dark mask to keep text legible */}
-        <div className="absolute inset-0 bg-slate-950/70" />
-      </div>
+      {/* DYNAMIC MOTION BACKGROUND */}
+      <MotionBackground />
 
       {/* MAIN CONTAINER */}
       <div className="relative z-10 container mx-auto px-6 pt-36 md:pt-44 pb-24 max-w-7xl">
 
         {/* 1. HERO SECTION */}
-        <section className="min-h-[80vh] flex items-center mb-16 md:mb-32">
+        <section className="min-h-[80vh] flex items-center mb-8 md:mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
 
             {/* Left Info Column */}
@@ -500,7 +492,7 @@ LIMIT 5;`,
         </section>
 
         {/* 2. CORE SOLUTIONS */}
-        <section id="solutions" className="py-20 border-t border-slate-900 scroll-mt-20">
+        <section id="solutions" className="py-16 border-t border-slate-900 scroll-mt-20">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-semibold text-indigo-400 uppercase tracking-widest">Solutions</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-slate-100">Bespoke Systems I Build</h2>
@@ -513,20 +505,20 @@ LIMIT 5;`,
             {solutions.map((sol, index) => (
               <div
                 key={index}
-                className="glass-panel rounded-2xl p-6 md:p-8 card-gradient-border glass-panel-hover transition-all duration-300 flex flex-col justify-between"
+                className="glass-card-bright rounded-2xl p-6 md:p-8 card-gradient-border glass-card-bright-hover transition-all duration-355 hover:-translate-y-1 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-indigo-400 flex items-center justify-center">
+                    <div className="p-3.5 rounded-xl bg-slate-950/5 border border-slate-200/50 flex items-center justify-center">
                       {sol.icon}
                     </div>
-                    <span className="px-2.5 py-1 text-[10px] font-mono bg-indigo-500/10 text-indigo-300 rounded-md border border-indigo-500/20">
+                    <span className="px-2.5 py-1 text-[10px] font-mono bg-indigo-55 text-indigo-700 rounded-md border border-indigo-200 font-semibold">
                       {sol.badge}
                     </span>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-slate-100 mb-2">{sol.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">{sol.title}</h3>
                   <div className="text-xs font-medium text-slate-500 mb-4">{sol.subtitle}</div>
-                  <p className="text-slate-400 text-sm leading-relaxed">{sol.description}</p>
+                  <p className="text-slate-655 text-sm leading-relaxed">{sol.description}</p>
                 </div>
               </div>
             ))}
@@ -534,7 +526,7 @@ LIMIT 5;`,
         </section>
 
         {/* 3. CAPABILITIES BENTO GRID */}
-        <section id="bento" className="py-20 border-t border-slate-900 scroll-mt-20">
+        <section id="bento" className="py-16 border-t border-slate-900 scroll-mt-20">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-semibold text-purple-400 uppercase tracking-widest">Technical Framework</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-slate-100">Architecture Capabilities</h2>
@@ -578,57 +570,57 @@ LIMIT 5;`,
             </div>
 
             {/* Box 2: Metrics Preview (Spans 2 columns) */}
-            <div className="md:col-span-2 glass-panel rounded-2xl p-6 md:p-8 card-gradient-border flex flex-col justify-between relative overflow-hidden">
+            <div className="md:col-span-2 glass-card-bright rounded-2xl p-6 md:p-8 card-gradient-border flex flex-col justify-between relative overflow-hidden group hover:border-slate-300/60 transition-all duration-300 hover:-translate-y-0.5">
               <div className="space-y-4 relative z-10">
-                <span className="text-xs font-mono text-purple-400">02 / System Efficiency</span>
-                <h3 className="text-xl font-bold text-slate-100">Operations</h3>
-                <p className="text-slate-400 text-xs leading-relaxed">
+                <span className="text-xs font-mono text-purple-650">02 / System Efficiency</span>
+                <h3 className="text-xl font-bold text-slate-900">Operations</h3>
+                <p className="text-slate-655 text-xs leading-relaxed">
                   Automated operations reduce manual entry error rates down to near zero.
                 </p>
               </div>
 
               {/* Simple metrics simulation */}
               <div className="mt-6 space-y-3 relative z-10">
-                <div className="flex justify-between text-xs text-slate-400">
+                <div className="flex justify-between text-xs text-slate-500">
                   <span>Entry Automation Rate</span>
-                  <span className="text-indigo-400 font-bold">96%</span>
+                  <span className="text-indigo-600 font-bold">96%</span>
                 </div>
-                <div className="w-full bg-slate-900 rounded-full h-2 overflow-hidden border border-slate-800">
-                  <div className="bg-indigo-500 h-full rounded-full" style={{ width: "96%" }} />
+                <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden border border-slate-200/60">
+                  <div className="bg-indigo-600 h-full rounded-full" style={{ width: "96%" }} />
                 </div>
 
-                <div className="flex justify-between text-xs text-slate-400 pt-2">
+                <div className="flex justify-between text-xs text-slate-500 pt-2">
                   <span>Speedups</span>
-                  <span className="text-purple-400 font-bold">12x Faster</span>
+                  <span className="text-purple-600 font-bold">12x Faster</span>
                 </div>
-                <div className="w-full bg-slate-900 rounded-full h-2 overflow-hidden border border-slate-800">
-                  <div className="bg-purple-500 h-full rounded-full" style={{ width: "88%" }} />
+                <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden border border-slate-200/60">
+                  <div className="bg-purple-600 h-full rounded-full" style={{ width: "88%" }} />
                 </div>
               </div>
             </div>
 
             {/* Box 3: Automated nodes mapping (Spans 2 columns) */}
-            <div className="md:col-span-2 glass-panel rounded-2xl p-6 md:p-8 card-gradient-border flex flex-col justify-between relative overflow-hidden">
+            <div className="md:col-span-2 glass-card-bright rounded-2xl p-6 md:p-8 card-gradient-border flex flex-col justify-between relative overflow-hidden group hover:border-slate-300/60 transition-all duration-300 hover:-translate-y-0.5">
               <div className="space-y-4 relative z-10">
-                <span className="text-xs font-mono text-pink-400">03 / Integrations</span>
-                <h3 className="text-xl font-bold text-slate-100 font-sans">Synced APIs</h3>
-                <p className="text-slate-400 text-xs leading-relaxed">
+                <span className="text-xs font-mono text-pink-600">03 / Integrations</span>
+                <h3 className="text-xl font-bold text-slate-900 font-sans">Synced APIs</h3>
+                <p className="text-slate-655 text-xs leading-relaxed">
                   Real-time webhook synchronization connecting payments with administrative ledger tools.
                 </p>
               </div>
 
               {/* Node trigger widget */}
-              <div className="mt-6 border border-slate-800 bg-slate-900/60 rounded-xl p-3.5 text-[10px] font-mono space-y-2 relative z-10">
-                <div className="flex items-center justify-between text-slate-400">
+              <div className="mt-6 border border-slate-200/80 bg-slate-50/80 rounded-xl p-3.5 text-[10px] font-mono space-y-2 relative z-10 shadow-sm text-slate-700">
+                <div className="flex items-center justify-between text-slate-500">
                   <span>TRIGGER</span>
-                  <span className="text-amber-400">Invoice Paid</span>
+                  <span className="text-amber-600 font-bold">Invoice Paid</span>
                 </div>
-                <div className="h-px bg-slate-800" />
+                <div className="h-px bg-slate-200" />
                 <div className="text-slate-500">
-                  ACTION: <span className="text-indigo-300">Ping Slack webhook</span>
+                  ACTION: <span className="text-indigo-600 font-semibold">Ping Slack webhook</span>
                 </div>
                 <div className="text-slate-500">
-                  ACTION: <span className="text-purple-300">Update CRM Database</span>
+                  ACTION: <span className="text-purple-600 font-semibold">Update CRM Database</span>
                 </div>
               </div>
             </div>
@@ -670,7 +662,7 @@ LIMIT 5;`,
         </section>
 
         {/* 4. FEATURED PROJECTS SHOWCASE */}
-        <section id="projects" className="py-20 border-t border-slate-900 scroll-mt-20">
+        <section id="projects" className="py-16 border-t border-slate-900 scroll-mt-20">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-semibold text-indigo-400 uppercase tracking-widest">Showcase</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-slate-100">Case Studies & Projects</h2>
@@ -794,7 +786,7 @@ LIMIT 5;`,
         </section>
 
         {/* 5. INTERACTIVE LIVE DEMO - BILLFLOW SIMULATION */}
-        <section id="demo" className="py-20 border-t border-slate-900 scroll-mt-20">
+        <section id="demo" className="py-16 border-t border-slate-900 scroll-mt-20">
           <div className="max-w-3xl mb-12">
             <span className="text-xs font-semibold text-pink-400 uppercase tracking-widest">Secret Weapon</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-slate-100">Live Dashboard Simulation</h2>
@@ -806,40 +798,40 @@ LIMIT 5;`,
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
             {/* Left controller: Generate New Invoices (Spans 4 columns) */}
-            <div className="lg:col-span-4 glass-panel rounded-2xl p-6 border border-slate-800">
-              <h3 className="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2">
-                <Plus className="w-4 h-4 text-indigo-400" />
+            <div className="lg:col-span-4 glass-card-bright rounded-2xl p-6 card-gradient-border glass-card-bright-hover transition-all duration-300">
+              <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <Plus className="w-4 h-4 text-indigo-600" />
                 Generate Invoice
               </h3>
 
               <form onSubmit={handleAddInvoice} className="space-y-4">
                 <div>
-                  <label className="block text-[10px] font-mono uppercase text-slate-400 mb-1.5">Client Enterprise Name</label>
+                  <label className="block text-[10px] font-mono uppercase text-slate-500 mb-1.5">Client Enterprise Name</label>
                   <input
                     type="text"
                     placeholder="e.g. Wayne Enterprises"
                     value={demoClient}
                     onChange={(e) => setDemoClient(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-indigo-500 text-xs transition-colors"
+                    className="w-full px-3.5 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500 text-xs transition-colors"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-mono uppercase text-slate-400 mb-1.5">Invoice Sum ($ USD)</label>
+                  <label className="block text-[10px] font-mono uppercase text-slate-500 mb-1.5">Invoice Sum ($ USD)</label>
                   <input
                     type="number"
                     placeholder="e.g. 2400"
                     value={demoAmount}
                     onChange={(e) => setDemoAmount(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-indigo-500 text-xs transition-colors"
+                    className="w-full px-3.5 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500 text-xs transition-colors"
                     required
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition-colors shadow-md flex items-center justify-center gap-1.5"
+                  className="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition-colors shadow-md flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <FileText className="w-3.5 h-3.5" />
                   Generate Invoice PO
@@ -853,17 +845,17 @@ LIMIT 5;`,
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
-                    className="mt-3.5 p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] text-center font-medium"
+                    className="mt-3.5 p-2.5 rounded-lg bg-emerald-50 border border-emerald-250 text-emerald-700 text-[10px] text-center font-medium"
                   >
                     {demoSuccessMsg}
                   </motion.div>
                 )}
               </AnimatePresence>
 
-              <div className="mt-6 border-t border-slate-900 pt-4 space-y-2.5">
-                <h4 className="text-[10px] font-bold font-mono uppercase text-slate-500">Reconciliation Actions</h4>
-                <p className="text-[9px] text-slate-400 leading-relaxed">
-                  1. Click on status badges in the list to switch payments between <span className="text-emerald-400">Paid</span> and <span className="text-yellow-400">Pending</span>.<br />
+              <div className="mt-6 border-t border-slate-200/60 pt-4 space-y-2.5">
+                <h4 className="text-[10px] font-bold font-mono uppercase text-slate-600">Reconciliation Actions</h4>
+                <p className="text-[9px] text-slate-500 leading-relaxed">
+                  1. Click on status badges in the list to switch payments between <span className="text-emerald-600 font-semibold">Paid</span> and <span className="text-amber-600 font-semibold">Pending</span>.<br />
                   2. Watch the stats dashboard recalculate total figures instantly.
                 </p>
               </div>
@@ -976,7 +968,7 @@ LIMIT 5;`,
         </section>
 
         {/* 5.5 SERVICES & PRICING SECTION */}
-        <section id="services" className="py-20 border-t border-slate-900 scroll-mt-20">
+        <section id="services" className="py-16 border-t border-slate-900 scroll-mt-20">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-semibold text-indigo-400 uppercase tracking-widest">Services</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-slate-100">What I Can Help You With</h2>
@@ -1049,37 +1041,37 @@ LIMIT 5;`,
             <div className="lg:col-span-5 relative">
               <div className="absolute inset-0 bg-indigo-500/5 blur-3xl rounded-3xl" />
               
-              <div className="relative glass-panel rounded-2xl p-8 border border-indigo-500/30 card-gradient-border shadow-2xl bg-slate-950/40 text-center">
-                <span className="px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-mono tracking-widest uppercase">
+              <div className="relative glass-card-bright rounded-2xl p-8 card-gradient-border shadow-2xl text-center glass-card-bright-hover transition-all duration-300">
+                <span className="px-3 py-1 rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 text-xs font-mono tracking-widest uppercase font-semibold">
                   Engagement Model
                 </span>
                 
-                <h3 className="text-xl font-bold text-slate-200 mt-6">Starting from</h3>
-                <div className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 drop-shadow-[0_0_20px_rgba(168,85,247,0.35)] mt-3">
+                <h3 className="text-xl font-bold text-slate-900 mt-6">Starting from</h3>
+                <div className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 drop-shadow-[0_0_20px_rgba(168,85,247,0.15)] mt-3">
                   $100<span className="text-sm font-semibold text-slate-500 uppercase tracking-wider">/ project</span>
                 </div>
                 
-                <p className="text-slate-400 text-sm mt-4 leading-relaxed">
+                <p className="text-slate-600 text-sm mt-4 leading-relaxed">
                   Every project is treated with meticulous care, prioritizing performance, user experience, and robust clean code.
                 </p>
 
-                <div className="h-px bg-slate-900 my-6" />
+                <div className="h-px bg-slate-200 my-6" />
 
-                <ul className="space-y-3.5 text-left text-xs text-slate-300 max-w-[280px] mx-auto">
+                <ul className="space-y-3.5 text-left text-xs text-slate-700 max-w-[280px] mx-auto">
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-600" />
                     Clean React / Next.js Architecture
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-purple-600" />
                     Responsive Design (Mobile & Desktop)
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-pink-600" />
                     SEO & Google Lighthouse Optimized
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                     1-Month Dedicated Post-Launch Support
                   </li>
                 </ul>
@@ -1097,7 +1089,7 @@ LIMIT 5;`,
         </section>
 
         {/* 6. WHY CHOOSE ME SECTION */}
-        <section id="why-me" className="py-20 border-t border-slate-900 scroll-mt-20">
+        <section id="why-me" className="py-16 border-t border-slate-900 scroll-mt-20">
           <div className="max-w-3xl mb-16 text-center mx-auto">
             <span className="text-xs font-semibold text-indigo-400 uppercase tracking-widest">Philosophy</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-slate-100">Why Work With Me?</h2>
@@ -1106,19 +1098,18 @@ LIMIT 5;`,
             {/* I focus on clean UI, fast performance, and real business value. */}
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {reasons.map((reason, index) => (
               <div
                 key={index}
-                className="p-6 md:p-8 rounded-2xl glass-panel border border-slate-900 flex flex-col justify-between"
+                className="p-6 md:p-8 rounded-2xl glass-card-bright border border-slate-200/50 glass-card-bright-hover transition-all duration-355 hover:-translate-y-1 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-11 h-11 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center mb-6 text-indigo-400">
+                  <div className="w-11 h-11 rounded-lg bg-slate-950/5 border border-slate-200/60 flex items-center justify-center mb-6">
                     {reason.icon}
                   </div>
-                  <h3 className="text-lg font-bold text-slate-200 mb-3">{reason.title}</h3>
-                  <p className="text-slate-400 text-xs leading-relaxed">{reason.description}</p>
+                  <h3 className="text-lg font-bold text-slate-900 mb-3">{reason.title}</h3>
+                  <p className="text-slate-655 text-xs leading-relaxed">{reason.description}</p>
                 </div>
               </div>
             ))}

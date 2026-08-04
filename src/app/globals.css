@@ -19,6 +19,9 @@
   --animate-slide-up: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-pulse-slow: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-float: float 6s ease-in-out infinite;
+  --animate-orbit-1: orbit-1 25s ease-in-out infinite;
+  --animate-orbit-2: orbit-2 30s ease-in-out infinite;
+  --animate-orbit-3: orbit-3 20s ease-in-out infinite;
 
   @keyframes fade-in {
     from { opacity: 0; }
@@ -33,6 +36,26 @@
   @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(-15px) rotate(2deg); }
+  }
+
+  @keyframes orbit-1 {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(10%, 15%) scale(1.1); }
+    66% { transform: translate(-5%, 8%) scale(0.95); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+
+  @keyframes orbit-2 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-8%, -12%) scale(1.1); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+
+  @keyframes orbit-3 {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(8%, -8%) scale(0.9); }
+    66% { transform: translate(-10%, 10%) scale(1.05); }
+    100% { transform: translate(0, 0) scale(1); }
   }
 }
 
@@ -60,6 +83,36 @@ body {
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
+}
+
+/* Lighter Glassmorphism Styles */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light-hover:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 40px -10px rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Bright Glassmorphism Styles */
+.glass-card-bright {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #0f172a; /* slate-900 */
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+.glass-card-bright-hover:hover {
+  border-color: rgba(99, 102, 241, 0.25);
+  box-shadow: 0 20px 45px -15px rgba(99, 102, 241, 0.12);
+  background: rgba(255, 255, 255, 0.94);
 }
 
 /* Glassmorphism Styles */
@@ -131,4 +184,21 @@ body {
 .card-gradient-border:hover::before {
   background: linear-gradient(to bottom right, rgba(99, 102, 241, 0.4), rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.3));
 }
+
+/* Ambient glow blobs used in MotionBackground */
+.glow-ambient-1 {
+  background: radial-gradient(circle, var(--glow-color-1) 0%, transparent 70%);
+  filter: blur(120px);
+}
+
+.glow-ambient-2 {
+  background: radial-gradient(circle, var(--glow-color-2) 0%, transparent 70%);
+  filter: blur(120px);
+}
+
+.glow-ambient-3 {
+  background: radial-gradient(circle, var(--glow-color-3) 0%, transparent 70%);
+  filter: blur(120px);
+}
+
 

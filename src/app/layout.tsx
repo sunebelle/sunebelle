@@ -8,10 +8,30 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Sunebelle | Creative Coder",
-  description: "Portfolio of Sunebelle, a passionate Creative Coder based in HCMC, Vietnam.",
-  keywords: ["Sunebelle", "Creative Coder", "Portfolio", "Frontend", "Next.js", "HCMC", "Vietnam"],
+  title: {
+    default: "Sunebelle | Creative Coder & Web Systems Architect",
+    template: "%s | Sunebelle"
+  },
+  description: "Portfolio of Sunebelle, a creative developer in HCMC, Vietnam specializing in B2B workflow automations, performant dashboards, and responsive web platforms.",
+  keywords: ["Sunebelle", "Creative Coder", "Portfolio", "Frontend", "Next.js", "HCMC", "Vietnam", "Web Automation", "B2B Dashboards"],
   authors: [{ name: "Sunebelle" }],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Sunebelle | Creative Coder & Web Systems Architect",
+    description: "Portfolio of Sunebelle, specializing in automated B2B workflows, high-performance dashboards, and modern business web platforms.",
+    url: "https://sunebelle.dev",
+    siteName: "Sunebelle Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sunebelle | Creative Coder & Web Systems Architect",
+    description: "Portfolio of Sunebelle, a passionate Creative Coder based in HCMC, Vietnam.",
+  },
 };
 
 export default function RootLayout({
