@@ -168,6 +168,20 @@ export default function Home() {
       glowColor: "rgba(16,185,129,0.4)",
       image: "/images/aura-coffee.png",
     },
+    {
+      title: "Industrial B2B Tools & Hardware Platform",
+      projectName: "VinaTool",
+      description: "A fast, modern web store and product database for industrial machinery, hand tools, and protective equipment.",
+      problem: "Traditional B2B tool distribution relies on printed catalogs and manual, error-prone phone and email ordering pipelines.",
+      solution: "Engineered a responsive Next.js catalog with category filters, dynamic shopping cart context, and detail-rich tool specifications.",
+      impact: "Accelerated tool lookup times and established a modern online procurement portal for engineers and field contractors.",
+      features: ["Dynamic Shopping Cart", "Technical Specs Grid", "Categorized Search", "Toast Feedback System"],
+      tech: ["React", "Next.js", "Tailwind CSS", "Lucide Icons", "Context API"],
+      link: "https://vinatool.vercel.app/",
+      color: "from-blue-600/30 to-orange-500/30",
+      glowColor: "rgba(249,115,22,0.4)",
+      image: "/images/vinatool.png",
+    },
   ];
 
   const solutions = [
@@ -706,7 +720,7 @@ LIMIT 5;`,
                             src={project.image}
                             alt={project.title}
                             fill
-                            className={`${project.projectName === "Billflow" || project.projectName === "Kindora"
+                            className={`${project.projectName === "Billflow" || project.projectName === "Kindora" || project.projectName === "VinaTool"
                               ? "object-contain object-top"
                               : "object-cover object-top"
                               } transition-transform duration-700 group-hover:scale-105`}
